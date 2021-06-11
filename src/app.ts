@@ -5,7 +5,7 @@ import { PORT } from './config';
 
 import routes from './routes';
 import { handleError } from './middlewares/error.middleware';
-import { handleNotFound } from 'middlewares/not-found.middleware';
+import { handleNotFound } from './middlewares/not-found.middleware';
 
 const app: Application = express();
 

@@ -1,13 +1,17 @@
 {
-    "name": "pacomer-api",
+    "name": "restaurants",
     "version": "0.1.0",
-    "description": "Backend for PaComer project",
+    "description": "Backend for restaurants project",
     "main": "src/index.ts",
     "scripts": {
         "build": "tsc",
         "clean": "rimraf dist",
         "start": "npm run build && node dist/index.js",
         "dev": "npx nodemon src/index.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eliasg1025/restaurants.git"
     },
     "author": "Elias Guere",
     "license": "ISC",
@@ -16,7 +20,8 @@
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "morgan": "^1.10.0",
-        "rimraf": "^3.0.2"
+        "rimraf": "^3.0.2",
+        "typeorm": "^0.2.34"
     },
     "devDependencies": {
         "@types/cors": "^2.8.10",
