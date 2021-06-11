@@ -1,11 +1,17 @@
-import express from 'express';
+import app from './app';
+// import { createConnection } from 'typeorm';
 
-const app = express();
+async function init(): Promise<void> {
+    try {
+        // const con = await createConnection();
+        console.log('Postgres is Online');
+        // createData(con);
+    } catch (err) {
+        console.log('Error Creating Postgres Connection:', err.message)
+    }
 
-app.get('/', (req, res) => {
-    res.send('Init project');
-});
+    app.listen(app.get('port'));
+    console.log(`Server is running on: http//:127.0.0.1:${app.get('port')}`);
+}
 
-app.listen(3000, () => {
-    console.log(`Server is listening on port 3000`);
-});
+init();
