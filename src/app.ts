@@ -4,6 +4,8 @@ import cors from 'cors';
 import { PORT } from './config';
 
 import routes from './routes';
+import { handleError } from './middlewares/error.middleware';
+import { handleNotFound } from 'middlewares/not-found.middleware';
 
 const app: Application = express();
 
@@ -24,5 +26,7 @@ app.use(express.json());
  * Routes
  */
 app.use('/', routes);
+app.use(handleError);
+app.use(handleNotFound);
 
 export default app;
